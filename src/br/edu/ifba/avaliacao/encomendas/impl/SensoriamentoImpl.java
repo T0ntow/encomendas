@@ -10,6 +10,13 @@ public class SensoriamentoImpl implements Sensoriamento<TempoEntrega> {
     private static final int TEMPO_ENTREGA_NORMAL = 5;
     private static final int VARIAÇÃO_MAXIMA = 4;
 
+    /**
+    * Método que gera tempos de entrega aleatórios.
+    * Complexidade: O(N)
+    * Justificativa: O método itera linearmente sobre o número total de encomendas especificado e gera um tempo de entrega aleatório para cada uma delas. 
+    * Consequências: A complexidade linear indica que o tempo de execução aumenta linearmente com o número total de encomendas geradas. Isso geralmente é eficiente para * um número moderado de encomendas, mas pode se tornar lento para grandes volumes de encomendas.
+    */
+
     public List<TempoEntrega> gerar(int totalEncomendas) {
         List<TempoEntrega> temposEntrega = new ArrayList<>();
         Random randomizador = new Random();
