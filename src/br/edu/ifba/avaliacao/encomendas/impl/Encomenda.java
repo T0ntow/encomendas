@@ -5,12 +5,12 @@ import java.time.LocalTime;
 public class Encomenda implements Comparable<Encomenda>{
     private String identificador;
     private String tempoEntregaEstimado;
-    private LocalTime horarioEntrega; // Novo campo adicionado
+    private LocalTime horarioEntrega;
 
     public Encomenda(String identificador, String tempoEntregaEstimado, LocalTime horarioEntrega) {
         this.identificador = identificador;
         this.tempoEntregaEstimado = tempoEntregaEstimado;
-        this.horarioEntrega = horarioEntrega; // Inicialização do novo campo
+        this.horarioEntrega = horarioEntrega;
     }
 
     public String getIdentificador() {
@@ -39,7 +39,7 @@ public class Encomenda implements Comparable<Encomenda>{
 
     @Override
     public String toString() {
-        return "ID: " + identificador + " horário de entrega= " + horarioEntrega;
+        return "ID: " + identificador + ", horário de entrega: " + horarioEntrega;
     }
 
     @Override

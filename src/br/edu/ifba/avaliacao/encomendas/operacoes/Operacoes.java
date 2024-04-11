@@ -5,10 +5,10 @@ import java.util.Map;
 import java.time.LocalTime;
 
 import br.edu.ifba.avaliacao.encomendas.impl.Encomenda;
-import br.edu.ifba.avaliacao.encomendas.impl.TempoEntrega;
 
 public interface Operacoes<Monitorado, Sensor> {
-     // implementando d.1
+
+    // implementando d.1
     public void imprimir(List<Monitorado> monitorados);
 
     // implementando d.2
@@ -18,8 +18,6 @@ public interface Operacoes<Monitorado, Sensor> {
     public Map<Monitorado, List<Sensor>> ordenar(Map<Monitorado, List<Sensor>> leituras);
 
     // implementando d.4
-    public void verificarConflitosEntrega(LocalTime[] horariosEntrega);
-
-    public void verificarConflitosEntrega2(Map<Encomenda, List<LocalTime>> horariosEntrega);
+    public void verificarConflitosEntrega(Map<Encomenda, List<LocalTime>> horariosEntrega);
 
 }

@@ -6,8 +6,6 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.time.LocalTime;
 import java.util.Random;
-import java.util.HashMap;
-
 
 import br.edu.ifba.avaliacao.encomendas.impl.Encomenda;
 import br.edu.ifba.avaliacao.encomendas.impl.OperacoesImpl;
@@ -49,23 +47,17 @@ public class App {
         System.out.println("imprimindo as encomendas:");
         operacoes.imprimir(new ArrayList<Encomenda>(leituras.keySet()));
 
-        // // d2. imprimindo leituras das encomendas
-        // System.out.println("imprimindo leituras por cada encomenda:");
-        // operacoes.imprimirLeituras(leituras);
+        // d2. imprimindo leituras das encomendas
+        System.out.println("imprimindo leituras por cada encomenda:");
+        operacoes.imprimirLeituras(leituras);
 
-        // // d3. ordenando os dados das leituras por encomenda
-        // System.out.println("ordenando as leituras de temperatura por cada encomenda:");
-        // Map<Encomenda, List<TempoEntrega>> leiturasOrdenadas = operacoes.ordenar(leituras);
-        // operacoes.imprimirLeituras(leiturasOrdenadas);
+        // d3. ordenando os dados das leituras por encomenda
+        System.out.println("ordenando as leituras de temperatura por cada encomenda:");
+        Map<Encomenda, List<TempoEntrega>> leiturasOrdenadas = operacoes.ordenar(leituras);
+        operacoes.imprimirLeituras(leiturasOrdenadas);
 
-        // Teste da função verificarConflitosEntrega
-        // LocalTime[] horariosEntrega = { LocalTime.of(8, 0), LocalTime.of(9, 0),
-        //         LocalTime.of(10, 0), LocalTime.of(11, 0) };
-
-        // operacoes.verificarConflitosEntrega(horariosEntrega);
-
-        operacoes.verificarConflitosEntrega2(horariosEntrega);
-
+        //d4. verificando conflitos de horário nas entregas
+        operacoes.verificarConflitosEntrega(horariosEntrega);
     }
 
     private static LocalTime randomizarHorarioEntrega() {
@@ -73,5 +65,4 @@ public class App {
         int hora = random.nextInt(10); // Horário aleatório de 0 a 23
         return LocalTime.of(hora, 0); // Criar LocalTime com a hora aleatória e minutos = 0
     }
-
 }
