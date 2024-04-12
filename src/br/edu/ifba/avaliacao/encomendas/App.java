@@ -22,9 +22,6 @@ public class App {
     public static void main(String[] args) throws Exception {
         Sensoriamento<TempoEntrega> sensoriamento = new SensoriamentoImpl();
 
-        List<TempoEntrega> temposEntrega = sensoriamento.gerar(TOTAL_ENCOMENDAS);
-        System.out.println("Tempos de entrega: " + temposEntrega);
-
         //variavel para d4
         Map<Encomenda, List<LocalTime>> horariosEntrega = new TreeMap<>();
         Map<Encomenda, List<TempoEntrega>> leituras = new TreeMap<>();
