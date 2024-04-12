@@ -26,7 +26,6 @@ public class App {
         System.out.println("Tempos de entrega: " + temposEntrega);
 
         //variavel para d4
-        // LocalTime[] horariosEntrega = new LocalTime[TOTAL_ENCOMENDAS];
         Map<Encomenda, List<LocalTime>> horariosEntrega = new TreeMap<>();
         Map<Encomenda, List<TempoEntrega>> leituras = new TreeMap<>();
 
@@ -62,7 +61,7 @@ public class App {
 
     private static LocalTime randomizarHorarioEntrega() {
         Random random = new Random();
-        int hora = random.nextInt(10); // Horário aleatório de 0 a 23
+        int hora = random.nextInt(23); // Horário aleatório de 0 a 23
         return LocalTime.of(hora, 0); // Criar LocalTime com a hora aleatória e minutos = 0
     }
 }

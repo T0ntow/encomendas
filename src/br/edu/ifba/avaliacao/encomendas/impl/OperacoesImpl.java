@@ -65,8 +65,8 @@ public class OperacoesImpl implements Operacoes<Encomenda, TempoEntrega> {
     /**
      * Método que verifica conflitos de entrega entre as encomendas.
      * Complexidade: O(N^4)
-     * Justificativa: O método itera sobre todas as encomendas no mapa de horários de entrega e, para cada par de encomendas, itera sobre todas as combinações possíveis * de horários de entrega. Isso resulta em quatro loops aninhados, levando a uma complexidade quadrática.       
-     * Consequências: O tempo de execução aumenta exponencialmente com o número de encomendas e o número médio de horários de entrega por encomenda, tornando-se 
+     * Justificativa: O método itera sobre todas as encomendas no mapa de horários de entrega e, para cada par de encomendas, itera sobre todas as combinações possíveis * de horários de entrega. Isso resulta em quatro loops aninhados.       
+     * Consequências: O tempo de execução aumenta  com o número de encomendas e os horários de entrega por encomenda, tornando-se 
      * rapidamente impraticável para conjuntos de dados grandes. Pode levar a tempos de resposta extremamente longos e uso intensivo de recursos.
      */
     public void verificarConflitosEntrega(Map<Encomenda, List<LocalTime>> horariosEntrega) {
