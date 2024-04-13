@@ -69,6 +69,12 @@ public class OperacoesImpl implements Operacoes<Encomenda, TempoEntrega> {
      * Consequências: O tempo de execução aumenta  com o número de encomendas e os horários de entrega por encomenda, tornando-se 
      * rapidamente impraticável para conjuntos de dados grandes. Pode levar a tempos de resposta extremamente longos e uso intensivo de recursos.
      */
+
+    /*
+    * É possível que o algoritmo gere situações de necessidade de processamento via brute force quando o número de encomendas e/ou horários de entrega aumenta        
+    * significativamente. Isso ocorre devido aos loops aninhados que iteram sobre todas as combinações possíveis de horários de entrega para cada par de encomendas.
+    */
+
     public void verificarConflitosEntrega(Map<Encomenda, List<LocalTime>> horariosEntrega) {
         for (Map.Entry<Encomenda, List<LocalTime>> entry1 : horariosEntrega.entrySet()) {
             Encomenda encomenda1 = entry1.getKey();
